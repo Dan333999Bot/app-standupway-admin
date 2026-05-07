@@ -1,17 +1,20 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import {
-  LayoutDashboard, Megaphone, ToggleLeft, Users,
-  UserCheck, ClipboardList, LogOut, Menu, X,
+  LayoutDashboard, Settings, Megaphone, ToggleLeft, Users,
+  UserCheck, ClipboardList, BookOpen, CalendarDays, LogOut, Menu, X,
 } from 'lucide-react'
 import { useState } from 'react'
 
 const NAV = [
-  { path: '/dashboard',      label: 'Dashboard',       icon: LayoutDashboard },
-  { path: '/cta',            label: 'CTA & Testi',     icon: Megaphone },
-  { path: '/flags',          label: 'Feature Flags',   icon: ToggleLeft },
-  { path: '/utenti',         label: 'Utenti & Lead',   icon: Users },
-  { path: '/professionisti', label: 'Professionisti',  icon: UserCheck },
-  { path: '/questionari',    label: 'Questionari',     icon: ClipboardList },
+  { path: '/dashboard',      label: 'Dashboard',         icon: LayoutDashboard },
+  { path: '/config',         label: 'Configurazione',    icon: Settings },
+  { path: '/utenti',         label: 'Utenti & Percorso', icon: Users },
+  { path: '/corsi',          label: 'Corsi',             icon: BookOpen },
+  { path: '/eventi',         label: 'Incontri & Eventi', icon: CalendarDays },
+  { path: '/questionari',    label: 'Questionari',       icon: ClipboardList },
+  { path: '/professionisti', label: 'Professionisti',    icon: UserCheck },
+  { path: '/cta',            label: 'CTA & Testi',       icon: Megaphone },
+  { path: '/flags',          label: 'Feature Flags',     icon: ToggleLeft },
 ]
 
 export default function Layout() {
