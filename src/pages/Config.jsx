@@ -12,6 +12,13 @@ const FIELDS = [
     ],
   },
   {
+    section: 'Calendly – Prenotazioni',
+    note: 'Incolla l\'URL dell\'evento Calendly (es. https://calendly.com/nome-org/colloquio). Verrà mostrato come widget inline nella pagina di prenotazione.',
+    fields: [
+      { key: 'calendly_embed_url', label: 'URL evento Calendly', placeholder: 'https://calendly.com/...' },
+    ],
+  },
+  {
     section: 'Video Home – Sezione "Guarda in ordine"',
     note: 'Incolla l\'URL embed di YouTube (es. https://www.youtube.com/embed/VIDEO_ID) o Vimeo. Lascia vuoto per nascondere il video.',
     fields: [
