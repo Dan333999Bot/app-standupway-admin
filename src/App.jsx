@@ -10,6 +10,7 @@ import Professionisti from './pages/Professionisti'
 import Questionari from './pages/Questionari'
 import AdminCorsi from './pages/AdminCorsi'
 import EventiLive from './pages/EventiLive'
+import Appuntamenti from './pages/Appuntamenti'
 
 const AUTH_KEY = 'sw_admin_auth'
 
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="questionari" element={<Questionari />} />
           <Route path="corsi" element={<AdminCorsi />} />
           <Route path="eventi" element={<EventiLive />} />
+          <Route path="appuntamenti" element={<Appuntamenti />} />
         </Route>
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>

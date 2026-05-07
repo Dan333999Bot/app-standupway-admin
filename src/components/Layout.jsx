@@ -1,7 +1,7 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, Settings, Megaphone, ToggleLeft, Users,
-  UserCheck, ClipboardList, BookOpen, CalendarDays, LogOut, Menu, X,
+  UserCheck, ClipboardList, BookOpen, CalendarDays, CalendarCheck, LogOut, Menu, X,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -11,6 +11,7 @@ const NAV = [
   { path: '/utenti',         label: 'Utenti & Percorso', icon: Users },
   { path: '/corsi',          label: 'Corsi',             icon: BookOpen },
   { path: '/eventi',         label: 'Incontri & Eventi', icon: CalendarDays },
+  { path: '/appuntamenti',   label: 'Appuntamenti',      icon: CalendarCheck },
   { path: '/questionari',    label: 'Questionari',       icon: ClipboardList },
   { path: '/professionisti', label: 'Professionisti',    icon: UserCheck },
   { path: '/cta',            label: 'CTA & Testi',       icon: Megaphone },
