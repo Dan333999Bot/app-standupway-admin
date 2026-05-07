@@ -3,6 +3,8 @@ import { supabase } from '../lib/supabase'
 import { RefreshCw, ChevronDown, ChevronUp } from 'lucide-react'
 
 const LEVEL_BADGE = {
+  basso: 'badge-green', medio: 'badge-yellow', alto: 'badge-red',
+  // legacy keys
   lieve: 'badge-green', moderato: 'badge-yellow',
   significativo: 'badge-yellow', intensivo: 'badge-red',
 }
@@ -15,10 +17,9 @@ const ADDICTION_LABEL = {
 
 // Score thresholds — admin can see and adjust context
 const THRESHOLDS = [
-  { key: 'lieve',        label: 'Lieve',        range: '0–35%',  color: '#10b981', desc: 'Utente con dipendenza lieve o iniziale. CTA: strumenti gratuiti.' },
-  { key: 'moderato',     label: 'Moderato',      range: '36–60%', color: '#f59e0b', desc: 'Dipendenza moderata. CTA: colloquio gratuito consigliato.' },
-  { key: 'significativo',label: 'Significativo', range: '61–80%', color: '#f97316', desc: 'Dipendenza significativa. CTA: colloquio gratuito urgente.' },
-  { key: 'intensivo',    label: 'Intensivo',     range: '81–100%',color: '#ef4444', desc: 'Dipendenza grave. CTA: colloquio gratuito immediato.' },
+  { key: 'basso', label: 'Basso',  range: 'score < 6',  color: '#10b981', desc: 'Dipendenza lieve o iniziale.' },
+  { key: 'medio', label: 'Medio',  range: 'score 6–11', color: '#f59e0b', desc: 'Dipendenza moderata. Colloquio consigliato.' },
+  { key: 'alto',  label: 'Alto',   range: 'score ≥ 12', color: '#ef4444', desc: 'Dipendenza significativa. Colloquio urgente.' },
 ]
 
 export default function Questionari() {
@@ -66,7 +67,7 @@ export default function Questionari() {
         <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '16px', color: 'var(--text)' }}>
           Soglie di scoring (score / max possibile)
         </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '12px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '12px' }}>
           {THRESHOLDS.map(t => (
             <div key={t.key} style={{
               padding: '14px', borderRadius: '10px', border: `1px solid ${t.color}30`,
@@ -149,7 +150,7 @@ export default function Questionari() {
 
       <style>{`
         @media (max-width: 900px) {
-          [style*="repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+          [style*="repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
           [style*="repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
