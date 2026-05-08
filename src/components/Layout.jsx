@@ -12,6 +12,7 @@ const NAV = [
   { path: '/corsi',          label: 'Corsi',             icon: BookOpen },
   { path: '/eventi',         label: 'Incontri & Eventi', icon: CalendarDays },
   { path: '/appuntamenti',   label: 'Appuntamenti',      icon: CalendarCheck },
+  { path: '/richieste-corsi', label: 'Richieste Corsi',  icon: BookOpen },
   { path: '/questionari',    label: 'Questionari',       icon: ClipboardList },
   { path: '/professionisti', label: 'Professionisti',    icon: UserCheck },
   { path: '/cta',            label: 'CTA & Testi',       icon: Megaphone },
