@@ -87,7 +87,7 @@ export default function Questionari() {
         cntEv('prenota_registrazione_completata'), // 28
         cntScreen('prenota_benvenuto'),            // 29
         cntEv('prenota_paga_click'),               // 30
-        cntScreen('thankyou'),                     // 31 — conversione Stripe
+        cntEv('conversione_v1'),                   // 31 — conversione Stripe reale (solo da redirect Stripe V1)
       ])
 
       const [startRes, completeRes, abandonRes, completeEventsRes, startEventsRes, ...rest] = results
