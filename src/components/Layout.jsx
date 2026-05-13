@@ -1,7 +1,7 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, Settings, Megaphone, ToggleLeft, Users,
-  UserCheck, ClipboardList, BookOpen, CalendarDays, CalendarCheck, LogOut, Menu, X,
+  UserCheck, ClipboardList, BookOpen, CalendarDays, CalendarCheck, LogOut, Menu, X, Zap,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -14,6 +14,7 @@ const NAV = [
   { path: '/appuntamenti',   label: 'Appuntamenti',      icon: CalendarCheck },
   { path: '/richieste-corsi', label: 'Richieste Corsi',  icon: BookOpen },
   { path: '/questionari',    label: 'Questionari',       icon: ClipboardList },
+  { path: '/funnel-v2',      label: 'Funnel V2',         icon: Zap },
   { path: '/professionisti', label: 'Professionisti',    icon: UserCheck },
   { path: '/cta',            label: 'CTA & Testi',       icon: Megaphone },
   { path: '/flags',          label: 'Feature Flags',     icon: ToggleLeft },
