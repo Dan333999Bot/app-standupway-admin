@@ -87,6 +87,7 @@ export default function Questionari() {
         cntEv('prenota_registrazione_completata'), // 28
         cntScreen('prenota_benvenuto'),            // 29
         cntEv('prenota_paga_click'),               // 30
+        cntScreen('thankyou'),                     // 31 — conversione Stripe
       ])
 
       const [startRes, completeRes, abandonRes, completeEventsRes, startEventsRes, ...rest] = results
@@ -97,6 +98,7 @@ export default function Questionari() {
         pfCalView, pfCalCta,
         pfRegView, pfRegCta,
         pfBenView, pfBenPaga,
+        pfConversione,
       ] = rest.slice(16)
 
       // Responses list
@@ -153,6 +155,7 @@ export default function Questionari() {
         { label: '→ Account creato',         count: pfRegCta.count || 0, cta: true },
         { label: 'Pagina benvenuto',         count: pfBenView.count || 0, cta: null },
         { label: '→ Click "Paga ora"',       count: pfBenPaga.count || 0, cta: true },
+        { label: '✅ Conversione Stripe',     count: pfConversione.count || 0, cta: true },
       ])
     } catch (e) {
       console.error(e)

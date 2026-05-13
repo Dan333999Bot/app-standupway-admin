@@ -64,6 +64,7 @@ export default function FunnelV2() {
         pianoView,
         stripeClick,
         appClick,
+        conversione,
         // Recenti
         completeEvents,
         // By percorso start events
@@ -78,6 +79,7 @@ export default function FunnelV2() {
         cntUniqV2('screen_view', { screen: 'piano_v2' }, range),               // 4
         cntUniqV2('piano_v2_stripe_click', {}, range),                         // 5
         cntUniqV2('piano_v2_app_click', {}, range),                            // 6
+        cntUniqV2('conversione_stripe', {}, range),                            // 7
         // Complete events for recent table
         applyRange(
           supabase.from('funnel_v2_events').select('session_id, created_at, metadata')
@@ -118,6 +120,7 @@ export default function FunnelV2() {
         { label: 'Piano visualizzato',         count: pianoView.count       || 0 },
         { label: 'Click "Inizia ora" (Stripe)', count: stripeClick.count   || 0 },
         { label: 'Click "Entra in app"',       count: appClick.count        || 0 },
+        { label: '✅ Conversione (Thankyou)',   count: conversione.count     || 0 },
       ]
       const topCount = steps[0]?.count || 1
       setFunnel(steps.map(s => ({
