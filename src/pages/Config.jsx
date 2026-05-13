@@ -4,6 +4,18 @@ import { Save, RefreshCw, ExternalLink } from 'lucide-react'
 
 const FIELDS = [
   {
+    section: 'Stripe – Funnel V2',
+    note: 'Link Stripe per i 3 piani del Funnel V2 (/v2). Incolla il link di pagamento Stripe per ogni piano.',
+    fields: [
+      { key: 'stripe_v2_gruppi_solo_mensile_url',   label: 'Solo Gruppi – mensile (97€/mese)',          placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_gruppi_solo_annuale_url',   label: 'Solo Gruppi – annuale (970€/anno)',          placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_gruppi_mensile_url',         label: 'Gruppi + Colloquio – mensile (297€/mese)',  placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_gruppi_annuale_url',         label: 'Gruppi + Colloquio – annuale (2.970€/anno)',placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_completo_mensile_url',       label: 'Completo – mensile (597€/mese)',            placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_completo_annuale_url',       label: 'Completo – annuale (5.970€/anno)',          placeholder: 'https://buy.stripe.com/...' },
+    ],
+  },
+  {
     section: 'Stripe – Pagamenti',
     fields: [
       { key: 'stripe_colloquio_url', label: 'URL colloquio (49€)', placeholder: 'https://buy.stripe.com/...' },
