@@ -65,6 +65,10 @@ export default function FunnelV2() {
         stripeClick,
         appClick,
         conversione,
+        accessoView,
+        registrazioneOk,
+        loginOk,
+        suggerito,
         // Recenti
         completeEvents,
         // By percorso start events
@@ -80,6 +84,10 @@ export default function FunnelV2() {
         cntUniqV2('piano_v2_stripe_click', {}, range),                         // 5
         cntUniqV2('piano_v2_app_click', {}, range),                            // 6
         cntUniqV2('conversione_stripe', {}, range),                            // 7
+        cntUniqV2('screen_view', { screen: 'accesso_v2' }, range),             // 8
+        cntUniqV2('registrazione_v2_completata', {}, range),                   // 9
+        cntUniqV2('login_v2_completato', {}, range),                           // 10
+        cntUniqV2('screen_view', { screen: 'percorso_suggerito' }, range),     // 11
         // Complete events for recent table
         applyRange(
           supabase.from('funnel_v2_events').select('session_id, created_at, metadata')
@@ -112,15 +120,19 @@ export default function FunnelV2() {
       })
 
       // Main funnel
+      const authOk = (registrazioneOk.count || 0) + (loginOk.count || 0)
       const steps = [
-        { label: 'Percorsi V2 visitati',      count: percorsiView.count    || 0 },
-        { label: 'Questionario iniziato',      count: qStart.count          || 0 },
-        { label: 'Questionario completato',    count: qComplete.count       || 0 },
-        { label: 'Risultato visualizzato',     count: risultatoView.count   || 0 },
-        { label: 'Piano visualizzato',         count: pianoView.count       || 0 },
-        { label: 'Click "Inizia ora" (Stripe)', count: stripeClick.count   || 0 },
-        { label: 'Click "Entra in app"',       count: appClick.count        || 0 },
-        { label: '✅ Conversione (Thankyou)',   count: conversione.count     || 0 },
+        { label: 'Percorsi V2 visitati',        count: percorsiView.count    || 0 },
+        { label: 'Questionario iniziato',        count: qStart.count          || 0 },
+        { label: 'Questionario completato',      count: qComplete.count       || 0 },
+        { label: 'Risultato visualizzato',       count: risultatoView.count   || 0 },
+        { label: 'Piano visualizzato',           count: pianoView.count       || 0 },
+        { label: 'Click "Inizia ora" (Stripe)',  count: stripeClick.count     || 0 },
+        { label: '✅ Conversione (Thankyou)',     count: conversione.count     || 0 },
+        { label: 'Click "Entra in app"',         count: appClick.count        || 0 },
+        { label: 'Pagina accesso aperta',        count: accessoView.count     || 0 },
+        { label: '→ Account creato / Login',     count: authOk                   },
+        { label: 'Percorso Suggerito aperto',    count: suggerito.count       || 0 },
       ]
       const topCount = steps[0]?.count || 1
       setFunnel(steps.map(s => ({
