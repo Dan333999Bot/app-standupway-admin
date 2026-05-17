@@ -16,6 +16,17 @@ const FIELDS = [
     ],
   },
   {
+    section: 'Stripe – Famiglie',
+    note: 'Link Stripe per i 3 piani del percorso Supporto Famiglie. Se vuoi usare gli stessi link del Funnel V2, incolla gli stessi URL.',
+    fields: [
+      { key: 'stripe_v2_famiglie_colloquio_url',        label: 'Colloquio Singolo – una tantum (49€)',       placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_famiglie_gruppi_mensile_url',   label: 'Gruppi Famiglie – mensile (97€/mese)',       placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_famiglie_gruppi_annuale_url',   label: 'Gruppi Famiglie – annuale (970€/anno)',      placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_famiglie_completo_mensile_url', label: 'Colloquio + Gruppi – mensile (297€/mese)',   placeholder: 'https://buy.stripe.com/...' },
+      { key: 'stripe_v2_famiglie_completo_annuale_url', label: 'Colloquio + Gruppi – annuale (2.970€/anno)', placeholder: 'https://buy.stripe.com/...' },
+    ],
+  },
+  {
     section: 'Stripe – Pagamenti',
     fields: [
       { key: 'stripe_colloquio_url', label: 'URL colloquio (49€)', placeholder: 'https://buy.stripe.com/...' },
